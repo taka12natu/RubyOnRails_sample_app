@@ -1,3 +1,14 @@
+<% @lists.each do |list| %>
+  <div class="list-box">
+  	<%= attachment_image_tag list, :image, :fill, 200, 200, format: 'jpag' %>
+  	<div class="list-comment">
+  		<span class="list-body"><%= list.body %></span>
+  		<span class="list-title"><%= link_to list.title, todolist_path(list.id) %></span>
+  	</div>
+  </div>
+<% end %>
+
+<!--ch11以前のコード
 <h1>投稿一覧</h1>
 <% @lists.each do |list| %>
   <p>タイトル</p>
@@ -7,6 +18,7 @@
   <p>画像</p>
  <%= attachment_image_tag list, :image, :fill, 100, 100, format: 'jpeg' %>
 <% end %>
+-->
 
 <!-- "/todolists/#{list.id}"を
 todolists_path(list.id)に書き換えている
